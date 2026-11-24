@@ -1,67 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Bolão do Major</title>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Bolão do Major</title>
 <style>
 :root{color-scheme:light dark}
-body{font:16px system-ui,sans-serif;max-width:720px;margin:0 auto;padding:12px}
+body{font:16px system-ui,sans-serif;max-width:720px;margin:0 auto;padding:10px 10px 200px}
 button,select,input{font:inherit;padding:8px 10px}
 button{cursor:pointer}
-h2,h3{margin:18px 0 6px}
-.bar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.sel{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}
-.sel select{width:100%}
-.r{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 0;border-bottom:1px solid #8886}
-.box{border:1px solid #8886;border-radius:6px;padding:8px 12px;text-align:center;min-width:110px}
-.box b{font-size:1.3em;display:block}
-small{opacity:.7}
-.won{color:#1a9e47}.lost{color:#d33}
 .hide{display:none}
-</style>
-</head>
+.bar{display:flex;gap:8px}
+.box{flex:1;border:1px solid #8886;border-radius:8px;padding:6px 10px;text-align:center}
+.box b{display:block;font-size:1.2em}
+.sel3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:10px 0}
+.sel3 select{width:100%;min-width:0}
+.tabs{display:flex;gap:6px;margin:6px 0}
+.tab{flex:1;border:1px solid #8886;border-radius:8px;background:none}
+.tab.on,#nav button.on{background:#8883;font-weight:600}
+.sec{font-size:13px;opacity:.7;margin:14px 0 4px}
+.row{display:flex;align-items:center;gap:6px;margin:5px 0}
+.n{flex:1;font-size:14px}.n.r{text-align:right}
+.x,.ln{font-size:13px;opacity:.7;text-align:center}.ln{min-width:40px}
+.o{min-width:58px;font-weight:600;border:1px solid #8888;border-radius:8px;background:none;padding:8px 6px}
+.o.big{flex:1}.o.sel{background:#2a78d633;border-color:#2a78d6}
+.st{padding:6px 8px;border:1px solid #8886;border-radius:8px;background:none}
+.r2{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 0;border-bottom:1px solid #8884}
+small{opacity:.7}.won{color:#1a9e47}.lost{color:#d33}
+#dock{position:fixed;left:50%;transform:translateX(-50%);width:100%;max-width:720px;bottom:0;box-sizing:border-box;background:Canvas;border-top:1px solid #8886;padding:8px 10px calc(8px + env(safe-area-inset-bottom))}
+#slip{margin-bottom:8px;font-size:14px}
+#nav{display:flex;gap:6px}#nav button{flex:1;border:1px solid #8886;border-radius:8px;background:none;padding:10px 4px;font-size:13px}
+</style></head>
 <body>
-
-<div id="login">
-  <h2>Bolão do Major</h2>
-  <button id="btnLogin">Entrar com Google</button>
-  <p id="loginMsg"></p>
-</div>
-
+<div id="login"><h2>Bolão do Major</h2><button id="btnLogin">Entrar com Google</button><p id="loginMsg"></p></div>
 <div id="app" class="hide">
-  <div class="bar">
-    <div class="box"><small>Carteira</small><b id="bal">0</b></div>
-    <div class="box"><small>Caixinha (perdido)</small><b id="cx">0</b></div>
-    <div><button id="btnImp">Importar médias</button> <button id="btnOut">Sair</button> <button id="btnReset">Reiniciar</button><input id="file" type="file" accept=".json,application/json" class="hide"></div>
-  </div>
-  <p><small id="src"></small></p>
-
-  <h2>Partida</h2>
-  <div class="sel">
-    <select id="selA"></select>
-    <select id="selB"></select>
-    <select id="selM"></select>
-  </div>
-  <div class="bar">
-    <span>Stake: <input id="stake" type="number" min="1" step="1" value="50" style="width:90px"></span>
-    <button id="btnShow">Ver apostas</button>
-  </div>
-  <p id="msg"></p>
-  <div id="market"></div>
-
-  <h2>Apostas abertas</h2>
-  <div id="open"></div>
-  <h2>Histórico</h2>
-  <div id="done"></div>
+<div class="bar"><div class="box"><small>Carteira</small><b id="bal">0</b></div><div class="box"><small>Caixinha</small><b id="cx">0</b></div></div>
+<div id="sel" class="sel3"><select id="selA"></select><select id="selB"></select><select id="selM"></select></div>
+<div id="main"></div>
+<input id="file" type="file" accept=".json,application/json" class="hide">
+<div id="dock"><div id="slip" class="hide"></div><div id="nav"></div></div>
 </div>
-
 <script type="module">
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {getAuth,GoogleAuthProvider,signInWithPopup,signInWithRedirect,onAuthStateChanged,signOut} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import {getFirestore,doc,collection,getDoc,setDoc,getDocs,onSnapshot,query,orderBy,runTransaction,writeBatch} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-/* ====== 1) COLE AQUI A CONFIGURAÇÃO DO SEU PROJETO FIREBASE ====== */
 const firebaseConfig = {
   apiKey: "AIzaSyAJmrW48axnCorBT0nrs6WxqCFNIslyfxY",
   authDomain: "telecash-7dd93.firebaseapp.com",
@@ -72,207 +51,173 @@ const firebaseConfig = {
   measurementId: "G-6BXX05RVHY"
 };
 
-/* ====== 2) DADOS FICTÍCIOS (troque depois pelos seus números) ======
-   wr = chance do time vencer cada mapa (taxa de vitória no mapa)
-   players = média de kills por mapa */
-let MAPS = ["Mirage","Inferno","Nuke","Ancient","Anubis"];
-let TEAMS = {
-  "Falcões":  {wr:{Mirage:.62,Inferno:.55,Nuke:.48,Ancient:.58,Anubis:.50},
-               players:{Raptor:20.1,Talon:18.4,Skye:17.2,Gale:16.5,Wren:14.8}},
-  "Tubarões": {wr:{Mirage:.50,Inferno:.64,Nuke:.57,Ancient:.45,Anubis:.60},
-               players:{Fin:19.6,Reef:18.0,Tide:17.5,Coral:16.1,Wave:15.2}},
-  "Lobos":    {wr:{Mirage:.44,Inferno:.47,Nuke:.66,Ancient:.60,Anubis:.42},
-               players:{Fang:21.0,Howl:18.9,Pack:17.0,Dusk:15.9,Moon:14.2}}
-};
-const DEMO = {maps:MAPS, teams:TEAMS};
-const START = 1000;       // pontos iniciais
-const DIFF = 0.3;         // peso do fator de dificuldade (kills ajustadas pela chance do time)
-const SD = 0.24;          // desvio padrão das kills = 24% da média
+/* dados fictícios de reserva (usados até você importar o JSON) */
+const DEMO = {maps:["Mirage","Inferno","Nuke","Ancient","Anubis"], teams:{
+ "Falcões":{wr:{Mirage:.62,Inferno:.55,Nuke:.48,Ancient:.58,Anubis:.50},players:{Raptor:20.1,Talon:18.4,Skye:17.2,Gale:16.5,Wren:14.8}},
+ "Tubarões":{wr:{Mirage:.50,Inferno:.64,Nuke:.57,Ancient:.45,Anubis:.60},players:{Fin:19.6,Reef:18.0,Tide:17.5,Coral:16.1,Wave:15.2}},
+ "Lobos":{wr:{Mirage:.44,Inferno:.47,Nuke:.66,Ancient:.60,Anubis:.42},players:{Fang:21.0,Howl:18.9,Pack:17.0,Dusk:15.9,Moon:14.2}}}};
+const START=1000, DIFF=.3, SD=.24, MINODD=1.05;
+let MAPS=DEMO.maps, TEAMS=DEMO.teams, imported=false, bets=[], balance=0, box=0, uref=null, unsubs=[], ctx="";
+const S={view:"match",tab:"mapa",L:{},slip:null,stake:50};
+const NAV=[["match","Partida"],["open","Abertas"],["hist","Histórico"],["wallet","Carteira"]];
 
-/* ====== CONTAS ====== */
-const log5 = (a,b) => a*(1-b)/(a*(1-b)+b*(1-a));
-const cdf = z => { const t=1/(1+.2316419*Math.abs(z)), d=.3989423*Math.exp(-z*z/2);
-  const p=d*t*(.3193815+t*(-.3565638+t*(1.781478+t*(-1.821256+t*1.330274)))); return z>0?1-p:p; };
-const clamp = p => Math.min(.95,Math.max(.05,p));
-const odd = p => +(1/p).toFixed(2);
+/* ===== contas ===== */
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const f2=o=>o.toFixed(2).replace(".",","), fl=x=>String(x).replace(".",",");
+const cdf=z=>{const t=1/(1+.2316419*Math.abs(z)),d=.3989423*Math.exp(-z*z/2);const p=d*t*(.3193815+t*(-.3565638+t*(1.781478+t*(-1.821256+t*1.330274))));return z>0?1-p:p};
+const clamp=p=>Math.min(.98,Math.max(.02,p));
+const log5=(a,b)=>a*(1-b)/(a*(1-b)+b*(1-a));
+const C=(n,k)=>{let r=1;for(let i=1;i<=k;i++)r=r*(n-k+i)/i;return r};
+/* placares possíveis de um mapa (13 rounds, prorrogação em blocos de 6) se o time A vence cada round com prob. q */
+function dist(q){const o=[];
+ for(let j=0;j<12;j++){o.push([13,j,C(12+j,j)*q**13*(1-q)**j],[j,13,C(12+j,j)*(1-q)**13*q**j]);}
+ let reach=C(24,12)*(q*(1-q))**12,base=12;
+ for(let k=0;k<8;k++){for(let j=0;j<3;j++){const w=C(3+j,3);o.push([base+4,base+j,reach*w*q**4*(1-q)**j],[base+j,base+4,reach*w*(1-q)**4*q**j]);}
+  reach*=20*(q*(1-q))**3;base+=3;}
+ return o}
+const pwin=q=>dist(q).reduce((s,[a,b,v])=>s+(a>b?v:0),0);
+function qOf(p){let lo=.2,hi=.8;for(let i=0;i<40;i++){const m=(lo+hi)/2;pwin(m)<p?lo=m:hi=m}return(lo+hi)/2}
+function model(A,B,M){const pA=clamp(log5(TEAMS[A].wr[M],TEAMS[B].wr[M])),D=dist(qOf(pA));
+ return{pA,tot:l=>D.reduce((s,r)=>s+(r[0]+r[1]>l?r[2]:0),0),team:(i,l)=>D.reduce((s,r)=>s+(r[i]>l?r[2]:0),0)}}
+const pm=(x,y)=>{const d=x.mu-y.mu,s=Math.hypot(x.sd,y.sd),w=1-cdf((.5-d)/s),l=cdf((-.5-d)/s);return w/(w+l)};
 
-function market(A,B,M){
-  const pA = clamp(log5(TEAMS[A].wr[M], TEAMS[B].wr[M]));
-  const players = [];
-  for(const [t,p] of [[A,pA],[B,1-pA]]){
-    for(const [n,avg] of Object.entries(TEAMS[t].players)){
-      const mean = avg*(1+DIFF*(p-.5));
-      const line = Math.round(mean-.5)+.5;
-      const pOver = clamp(1-cdf((line-mean)/(SD*mean)));
-      players.push({n,t,avg,mean,line,pOver});
-    }
-  }
-  return {pA,players};
-}
+/* ===== telas ===== */
+function btn(desc,p,lab,big){const o=1/p,c="o"+(big?" big":"");
+ if(!(o>=MINODD))return `<button class="${c}" disabled>—</button>`;
+ const fd=desc+" — "+ctx,od=+o.toFixed(2);
+ return `<button class="${c}${S.slip&&S.slip.d===fd?" sel":""}" data-d="${esc(fd)}" data-o="${od}">${lab?lab+" ":""}${f2(od)}</button>`}
+function ou(key,title,label,P,lo,hi,dl=lo,dh=hi){
+ let l=S.L[key];
+ if(l==null){let b=9;for(let x=dl;x<=dh;x++){const d=Math.abs(P(x)-.5);if(d<b){b=d;l=x}}}
+ l=Math.min(hi,Math.max(lo,l));S.L[key]=l;const k=esc(key);
+ return `<p class="sec">${esc(title)}</p><div class="row">${btn(`${label}: menos de ${fl(l)}`,1-P(l),"Menos",1)}<button class="st" data-k="${k}" data-s="-1">‹</button><span class="ln">${fl(l)}</span><button class="st" data-k="${k}" data-s="1">›</button>${btn(`${label}: mais de ${fl(l)}`,P(l),"Mais",1)}</div>`}
+function players(A,B,m){
+ const pl=(t,p)=>Object.entries(TEAMS[t].players).sort((a,b)=>b[1]-a[1]).map(([n,v])=>{const mu=v*(1+DIFF*(p-.5));return{n,t,mu,sd:SD*mu}});
+ const a=pl(A,m.pA),b=pl(B,1-m.pA);let h='<p class="sec">Head to head de kills</p>';
+ for(let i=0;i<Math.min(a.length,b.length);i++){const x=a[i],y=b[i],P=pm(x,y);
+  h+=`<div class="row"><span class="n">${esc(x.n)}</span>${btn(`${x.n} faz mais kills que ${y.n}`,P)}<span class="x">x</span>${btn(`${y.n} faz mais kills que ${x.n}`,1-P)}<span class="n r">${esc(y.n)}</span></div>`;
+  const d=x.mu-y.mu,s=Math.hypot(x.sd,y.sd),ad=Math.abs(d),hh=Math.max(.5,Math.round(ad-.5)+.5),pc=1-cdf((hh-ad)/s),xs=d>=0,sx=xs?"−":"+",sy=xs?"+":"−";
+  h+=`<div class="row"><span class="n"><small>${esc(x.n)} ${sx}${fl(hh)}</small></span>${btn(`${x.n} ${sx}${fl(hh)} kills contra ${y.n}`,xs?pc:1-pc)}<span class="x">x</span>${btn(`${y.n} ${sy}${fl(hh)} kills contra ${x.n}`,xs?1-pc:pc)}<span class="n r"><small>${esc(y.n)} ${sy}${fl(hh)}</small></span></div>`}
+ for(const x of a.concat(b)){const f=Math.floor(x.mu);
+  h+=ou(`k|${x.t}|${x.n}`,`${x.n} · ${x.t}`,`${x.n} kills`,l=>clamp(1-cdf((l-x.mu)/x.sd)),Math.max(.5,f-6.5),f+7.5)}
+ return h}
+function renderMatch(){
+ const A=$("selA").value,B=$("selB").value,M=$("selM").value;
+ if(A===B)return "<p>Escolha dois times diferentes.</p>";
+ ctx=`${A} x ${B} · ${M}`;const m=model(A,B,M),t=S.tab;
+ let h=`<div class="tabs"><button class="tab${t==="mapa"?" on":""}" data-t="mapa">Mapa</button><button class="tab${t==="jog"?" on":""}" data-t="jog">Jogadores</button></div>`;
+ if(t==="mapa"){
+  h+=`<p class="sec">Vencedor do mapa</p><div class="row">${btn(`${A} vence o mapa`,m.pA,A,1)}${btn(`${B} vence o mapa`,1-m.pA,B,1)}</div>`;
+  h+=ou("tot","Total de rounds","Total de rounds",l=>m.tot(l),15.5,29.5);
+  h+=ou("ta",`Rounds do ${A}`,`Rounds do ${A}`,l=>m.team(0,l),6.5,14.5,8.5,11.5);
+  h+=ou("tb",`Rounds do ${B}`,`Rounds do ${B}`,l=>m.team(1,l),6.5,14.5,8.5,11.5);
+ }else h+=players(A,B,m);
+ return h}
+const open=()=>bets.filter(b=>b.status==="pending"), done=()=>bets.filter(b=>b.status!=="pending");
+function renderOpen(){return "<h3>Apostas abertas</h3>"+(open().map(b=>`<div class="r2"><span>${esc(b.desc)}<br><small>stake ${b.stake} · odd ${f2(b.odd)} · retorno ${f2(b.stake*b.odd)}</small></span><span><button data-id="${b.id}" data-w="1">Ganhou</button> <button data-id="${b.id}" data-w="0">Perdeu</button></span></div>`).join("")||"<small>Nenhuma aposta aberta.</small>")}
+function renderHist(){const d=done(),w=d.filter(b=>b.status==="won").length;
+ return "<h3>Histórico</h3>"+(d.length?`<small>${w} ganhas · ${d.length-w} perdidas</small>`:"<small>Sem histórico ainda.</small>")+d.map(b=>`<div class="r2"><span>${esc(b.desc)}<br><small>stake ${b.stake} · odd ${f2(b.odd)}</small></span><b class="${b.status}">${b.status==="won"?"+"+f2(b.payout-b.stake):"-"+b.stake}</b></div>`).join("")}
+function renderWallet(){const d=done(),net=d.reduce((s,b)=>s+b.payout-b.stake,0);
+ return `<h3>Carteira</h3><p>Saldo: <b>${f2(balance)}</b> · Caixinha: <b>${f2(box)}</b><br>Resultado das apostas encerradas: <b class="${net>=0?"won":"lost"}">${net>=0?"+":""}${f2(net)}</b><br><small>${bets.length} apostas, ${open().length} abertas</small></p>
+ <p><small>${imported?`Médias importadas: ${Object.keys(TEAMS).length} times, ${MAPS.length} mapas.`:"Usando dados fictícios."}</small></p>
+ <p><button id="btnImp">Importar médias</button> <button id="btnReset">Reiniciar</button> <button id="btnOut">Sair</button></p>`}
+function render(){const y=scrollY;
+ $("sel").classList.toggle("hide",S.view!=="match");
+ $("main").innerHTML={match:renderMatch,open:renderOpen,hist:renderHist,wallet:renderWallet}[S.view]();
+ $("nav").innerHTML=NAV.map(([v,t])=>`<button data-v="${v}"${S.view===v?' class="on"':""}>${t}${v==="open"?` (${open().length})`:""}</button>`).join("");
+ scrollTo(0,y)}
+function showSlip(){const s=S.slip,el=$("slip");
+ if(!s){el.classList.add("hide");return}
+ el.classList.remove("hide");
+ el.innerHTML=`<div><b>${esc(s.d)}</b> <small>· odd ${f2(s.o)}</small></div><div class="row"><input id="stk" type="number" min="1" step="1" value="${S.stake}" style="width:80px">${[10,50,100].map(v=>`<button data-q="${v}">${v}</button>`).join("")}<button data-q="h">½</button><button data-q="a">Tudo</button><button id="go">Apostar</button><button id="xs">✕</button></div><small id="ret"></small>`;
+ ret()}
+const ret=()=>{const s=Math.floor(+$("stk").value)||0;$("ret").textContent=`Retorno se ganhar: ${f2(s*S.slip.o)}`};
 
-/* ====== FIREBASE ====== */
-const $ = id => document.getElementById(id);
-const esc = s => String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const app = initializeApp(firebaseConfig), auth = getAuth(app), db = getFirestore(app);
-let uref = null, unsubs = [], balance = 0;
-
-$("btnLogin").onclick = async () => {
-  const prov = new GoogleAuthProvider();
-  try { await signInWithPopup(auth,prov); }
-  catch(e){ try { await signInWithRedirect(auth,prov); } catch(e2){ $("loginMsg").textContent = "Erro no login: "+e2.message; } }
-};
-$("btnOut").onclick = () => signOut(auth);
-
-onAuthStateChanged(auth, async user => {
-  unsubs.forEach(u=>u()); unsubs=[];
-  $("login").classList.toggle("hide",!!user);
-  $("app").classList.toggle("hide",!user);
-  if(!user) return;
-  uref = doc(db,"users",user.uid);
-  try {
-    if(!(await getDoc(uref)).exists()) await setDoc(uref,{balance:START,box:0});
-  } catch(e){ alert("Erro ao acessar o banco. Verifique as regras do Firestore. "+e.message); return; }
-  unsubs.push(onSnapshot(uref, s => {
-    const d = s.data(); if(!d) return;
-    balance = d.balance;
-    $("bal").textContent = d.balance.toFixed(2);
-    $("cx").textContent = d.box.toFixed(2);
-  }));
-  unsubs.push(onSnapshot(doc(uref,"data","teams"), s => {
-    try { s.exists() ? applyData(JSON.parse(s.data().json),true) : applyData(DEMO,false); } catch(e){ applyData(DEMO,false); }
-  }));
-  unsubs.push(onSnapshot(query(collection(uref,"bets"),orderBy("ts","desc")), s => {
-    renderBets(s.docs.map(d=>({id:d.id,...d.data()})));
-  }));
-});
-
-/* ====== TELA ====== */
+/* ===== seleção e dados ===== */
+let ST=[];try{ST=JSON.parse(localStorage.getItem("sel")||"[]")}catch(e){}
 function fillSelects(){
-  const keep = [$("selA").value,$("selB").value,$("selM").value];
-  const names = Object.keys(TEAMS).sort((a,b)=>a.localeCompare(b));
-  const opts = names.map(t=>`<option>${esc(t)}</option>`).join("");
-  $("selA").innerHTML = $("selB").innerHTML = opts;
-  $("selM").innerHTML = MAPS.map(m=>`<option>${esc(m)}</option>`).join("");
-  $("selA").value = names.includes(keep[0]) ? keep[0] : names[0];
-  $("selB").value = names.includes(keep[1]) && keep[1]!==$("selA").value ? keep[1] : (names.find(n=>n!==$("selA").value) || names[0]);
-  if(MAPS.includes(keep[2])) $("selM").value = keep[2];
-}
-function applyData(d,imported){
-  MAPS = d.maps; TEAMS = d.teams; fillSelects(); $("market").innerHTML = "";
-  $("src").textContent = imported ? `Médias importadas: ${Object.keys(TEAMS).length} times, ${MAPS.length} mapas.` : "Usando dados fictícios. Toque em Importar médias para usar os seus.";
-}
+ const keep=[$("selA").value||ST[0],$("selB").value||ST[1],$("selM").value||ST[2]],names=Object.keys(TEAMS).sort((a,b)=>a.localeCompare(b));
+ $("selA").innerHTML=$("selB").innerHTML=names.map(t=>`<option>${esc(t)}</option>`).join("");
+ $("selM").innerHTML=MAPS.map(m=>`<option>${esc(m)}</option>`).join("");
+ $("selA").value=names.includes(keep[0])?keep[0]:names[0];
+ $("selB").value=names.includes(keep[1])&&keep[1]!==$("selA").value?keep[1]:(names.find(n=>n!==$("selA").value)||names[0]);
+ if(MAPS.includes(keep[2]))$("selM").value=keep[2]}
+function applyData(d,imp){MAPS=d.maps;TEAMS=d.teams;imported=imp;S.L={};fillSelects();render()}
 function validate(d){
-  if(!d || !Array.isArray(d.maps) || !d.maps.length || typeof d.teams!=="object" || !d.teams) return {err:"O JSON precisa ter maps (lista) e teams (objeto)."};
-  const out = {maps:d.maps.map(String), teams:{}}, warn = [];
-  for(const [name,t] of Object.entries(d.teams)){
-    const players = {};
-    for(const [p,v] of Object.entries((t&&t.players)||{})) if(Number.isFinite(+v) && +v>0) players[p] = +v;
-    if(!Object.keys(players).length){ warn.push(`${name}: sem jogadores (ignorado)`); continue; }
-    const wr = {}; let miss = 0;
-    for(const m of out.maps){ const v = +((t.wr||{})[m]); if(Number.isFinite(v) && v>0 && v<1) wr[m]=v; else { wr[m]=.5; miss++; } }
-    if(miss) warn.push(`${name}: ${miss} mapa(s) sem win rate (usei 50%)`);
-    out.teams[name] = {wr,players};
-  }
-  if(Object.keys(out.teams).length<2) return {err:"Preciso de pelo menos 2 times válidos."};
-  return {data:out, warn: warn.length ? "\n\nAvisos:\n"+warn.slice(0,8).join("\n") : ""};
-}
-fillSelects();
-$("src").textContent = "Usando dados fictícios. Toque em Importar médias para usar os seus.";
+ if(!d||!Array.isArray(d.maps)||!d.maps.length||typeof d.teams!=="object"||!d.teams)return{err:"O JSON precisa ter maps (lista) e teams (objeto)."};
+ const out={maps:d.maps.map(String),teams:{}},warn=[];
+ for(const [name,t] of Object.entries(d.teams)){
+  const players={};for(const [p,v] of Object.entries((t&&t.players)||{}))if(Number.isFinite(+v)&&+v>0)players[p]=+v;
+  if(!Object.keys(players).length){warn.push(`${name}: sem jogadores (ignorado)`);continue}
+  const wr={};let miss=0;
+  for(const m of out.maps){const v=+((t.wr||{})[m]);if(Number.isFinite(v)&&v>0&&v<1)wr[m]=v;else{wr[m]=.5;miss++}}
+  if(miss)warn.push(`${name}: ${miss} mapa(s) sem win rate (usei 50%)`);
+  out.teams[name]={wr,players}}
+ if(Object.keys(out.teams).length<2)return{err:"Preciso de pelo menos 2 times válidos."};
+ return{data:out,warn:warn.length?"\n\nAvisos:\n"+warn.slice(0,8).join("\n"):""}}
 
-$("btnImp").onclick = () => $("file").click();
-$("file").onchange = async e => {
-  const f = e.target.files[0]; if(!f) return;
-  try {
-    const r = validate(JSON.parse(await f.text()));
-    if(r.err) alert(r.err);
-    else {
-      await setDoc(doc(uref,"data","teams"),{json:JSON.stringify(r.data),updated:Date.now()});
-      alert(`Importado: ${Object.keys(r.data.teams).length} times.${r.warn}`);
-    }
-  } catch(err){ alert("Arquivo inválido: "+err.message); }
-  e.target.value = "";
-};
+/* ===== firebase ===== */
+const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);
+$("btnLogin").onclick=async()=>{const p=new GoogleAuthProvider();
+ try{await signInWithPopup(auth,p)}catch(e){try{await signInWithRedirect(auth,p)}catch(e2){$("loginMsg").textContent="Erro no login: "+e2.message}}};
+onAuthStateChanged(auth,async user=>{
+ unsubs.forEach(u=>u());unsubs=[];
+ $("login").classList.toggle("hide",!!user);$("app").classList.toggle("hide",!user);
+ if(!user)return;
+ uref=doc(db,"users",user.uid);
+ try{if(!(await getDoc(uref)).exists())await setDoc(uref,{balance:START,box:0})}
+ catch(e){alert("Erro ao acessar o banco. Verifique as regras do Firestore. "+e.message);return}
+ unsubs.push(onSnapshot(uref,s=>{const d=s.data();if(!d)return;balance=d.balance;box=d.box;$("bal").textContent=f2(balance);$("cx").textContent=f2(box);if(S.view==="wallet")render()}));
+ unsubs.push(onSnapshot(query(collection(uref,"bets"),orderBy("ts","desc")),s=>{bets=s.docs.map(d=>({id:d.id,...d.data()}));render()}));
+ unsubs.push(onSnapshot(doc(uref,"data","teams"),s=>{
+  try{s.exists()?applyData(JSON.parse(s.data().json),true):applyData(DEMO,false)}catch(e){applyData(DEMO,false)}}))});
 
-function row(label,p,o,desc){
-  return `<div class="r"><span>${esc(label)}<br><small>${(p*100).toFixed(1)}% · odd ${o.toFixed(2)}</small></span>`+
-         `<button data-d="${esc(desc)}" data-o="${o}">Apostar</button></div>`;
-}
-
-$("btnShow").onclick = () => {
-  const A=$("selA").value, B=$("selB").value, M=$("selM").value;
-  $("msg").textContent = "";
-  if(A===B){ $("msg").textContent = "Escolha dois times diferentes."; return; }
-  const m = market(A,B,M), ctx = `${A} x ${B} em ${M}`;
-  let h = `<h3>Vencedor do mapa</h3>`;
-  h += row(`${A} vence ${M}`, m.pA, odd(m.pA), `${A} vence o mapa — ${ctx}`);
-  h += row(`${B} vence ${M}`, 1-m.pA, odd(1-m.pA), `${B} vence o mapa — ${ctx}`);
-  h += `<h3>Kills dos jogadores</h3>`;
-  for(const p of m.players){
-    const oo = odd(p.pOver), ou = odd(1-p.pOver);
-    h += `<div class="r"><span>${esc(p.n)} <small>(${esc(p.t)})</small><br><small>média ${p.avg.toFixed(1)} · esperado ${p.mean.toFixed(1)} · linha ${p.line}</small></span>`+
-      `<span><button data-d="${esc(`${p.n} OVER ${p.line} kills — ${ctx}`)}" data-o="${oo}">Over ${oo.toFixed(2)}</button> `+
-      `<button data-d="${esc(`${p.n} UNDER ${p.line} kills — ${ctx}`)}" data-o="${ou}">Under ${ou.toFixed(2)}</button></span></div>`;
-  }
-  $("market").innerHTML = h;
-};
-
-$("market").onclick = e => {
-  const b = e.target.closest("button[data-d]"); if(b) place(b.dataset.d, +b.dataset.o);
-};
-
-async function place(desc,o){
-  const stake = Math.floor(+$("stake").value);
-  if(!(stake>0)) return alert("Informe um stake maior que zero.");
-  if(stake>balance) return alert("Saldo insuficiente.");
-  if(!confirm(`${desc}\nOdd ${o.toFixed(2)} · stake ${stake}\nRetorno se ganhar: ${(stake*o).toFixed(2)}`)) return;
-  try {
-    await runTransaction(db, async tx => {
-      const u = await tx.get(uref), bal = u.data().balance;
-      if(stake>bal) throw new Error("Saldo insuficiente.");
-      tx.update(uref,{balance:+(bal-stake).toFixed(2)});
-      tx.set(doc(collection(uref,"bets")),{desc,odd:o,stake,status:"pending",payout:0,ts:Date.now()});
-    });
-  } catch(e){ alert(e.message); }
-}
-
+async function place(){
+ const stake=Math.floor(+$("stk").value),{d,o}=S.slip;
+ if(!(stake>0))return alert("Informe um stake maior que zero.");
+ if(stake>balance)return alert("Saldo insuficiente.");
+ try{await runTransaction(db,async tx=>{const u=await tx.get(uref),bal=u.data().balance;
+   if(stake>bal)throw new Error("Saldo insuficiente.");
+   tx.update(uref,{balance:+(bal-stake).toFixed(2)});
+   tx.set(doc(collection(uref,"bets")),{desc:d,odd:o,stake,status:"pending",payout:0,ts:Date.now()})});
+  S.stake=stake;S.slip=null;showSlip();render()}catch(e){alert(e.message)}}
 async function settle(id,won){
-  try {
-    await runTransaction(db, async tx => {
-      const br = doc(uref,"bets",id), b = await tx.get(br), u = await tx.get(uref);
-      const bd = b.data(), d = u.data();
-      if(bd.status!=="pending") return;
-      const payout = won ? +(bd.stake*bd.odd).toFixed(2) : 0;
-      tx.update(br,{status:won?"won":"lost",payout});
-      tx.update(uref,{balance:+(d.balance+payout).toFixed(2), box:+(d.box+(won?0:bd.stake)).toFixed(2)});
-    });
-  } catch(e){ alert(e.message); }
-}
+ try{await runTransaction(db,async tx=>{const br=doc(uref,"bets",id),b=await tx.get(br),u=await tx.get(uref),bd=b.data(),d=u.data();
+   if(bd.status!=="pending")return;
+   const payout=won?+(bd.stake*bd.odd).toFixed(2):0;
+   tx.update(br,{status:won?"won":"lost",payout});
+   tx.update(uref,{balance:+(d.balance+payout).toFixed(2),box:+(d.box+(won?0:bd.stake)).toFixed(2)})})}catch(e){alert(e.message)}}
+async function reset(){
+ if(!confirm(`Apagar todas as apostas e voltar para ${START} pontos?`))return;
+ const s=await getDocs(collection(uref,"bets")),b=writeBatch(db);
+ s.forEach(d=>b.delete(d.ref));b.set(uref,{balance:START,box:0});await b.commit()}
 
-$("open").onclick = e => {
-  const b = e.target.closest("button[data-id]"); if(b) settle(b.dataset.id, b.dataset.w==="1");
-};
-
-function renderBets(list){
-  const open = list.filter(b=>b.status==="pending"), done = list.filter(b=>b.status!=="pending");
-  $("open").innerHTML = open.map(b=>
-    `<div class="r"><span>${esc(b.desc)}<br><small>stake ${b.stake} · odd ${b.odd.toFixed(2)} · retorno ${(b.stake*b.odd).toFixed(2)}</small></span>`+
-    `<span><button data-id="${b.id}" data-w="1">Ganhou</button> <button data-id="${b.id}" data-w="0">Perdeu</button></span></div>`
-  ).join("") || "<small>Nenhuma aposta aberta.</small>";
-  const w = done.filter(b=>b.status==="won").length;
-  $("done").innerHTML = (done.length ? `<small>${w} ganhas · ${done.length-w} perdidas</small>` : "<small>Sem histórico ainda.</small>") +
-    done.map(b=>
-      `<div class="r"><span>${esc(b.desc)}<br><small>stake ${b.stake} · odd ${b.odd.toFixed(2)}</small></span>`+
-      `<b class="${b.status}">${b.status==="won"?"+"+(b.payout-b.stake).toFixed(2):"-"+b.stake}</b></div>`
-    ).join("");
-}
-
-$("btnReset").onclick = async () => {
-  if(!confirm(`Apagar todas as apostas e voltar para ${START} pontos?`)) return;
-  const s = await getDocs(collection(uref,"bets")), b = writeBatch(db);
-  s.forEach(d=>b.delete(d.ref));
-  b.set(uref,{balance:START,box:0});
-  await b.commit();
-};
+/* ===== eventos ===== */
+["selA","selB","selM"].forEach(id=>$(id).onchange=()=>{
+ S.L={};S.slip=null;showSlip();
+ try{localStorage.setItem("sel",JSON.stringify([$("selA").value,$("selB").value,$("selM").value]))}catch(e){}
+ render()});
+$("main").onclick=e=>{const t=e.target.closest("button");if(!t)return;const d=t.dataset;
+ if(d.d){S.slip={d:d.d,o:+d.o};showSlip();render()}
+ else if(d.k){S.L[d.k]+=+d.s;render()}
+ else if(d.t){S.tab=d.t;render()}
+ else if(d.id)settle(d.id,d.w==="1");
+ else if(t.id==="btnImp")$("file").click();
+ else if(t.id==="btnReset")reset();
+ else if(t.id==="btnOut")signOut(auth)};
+$("nav").onclick=e=>{const v=e.target.dataset.v;if(v){S.view=v;render();scrollTo(0,0)}};
+$("slip").onclick=e=>{const t=e.target.closest("button");if(!t)return;
+ if(t.id==="go")place();
+ else if(t.id==="xs"){S.slip=null;showSlip();render()}
+ else if(t.dataset.q){const q=t.dataset.q;$("stk").value=q==="h"?Math.floor(balance/2):q==="a"?Math.floor(balance):q;ret()}};
+$("slip").oninput=e=>{if(e.target.id==="stk")ret()};
+$("file").onchange=async e=>{const f=e.target.files[0];if(!f)return;
+ try{const r=validate(JSON.parse(await f.text()));
+  if(r.err)alert(r.err);
+  else{await setDoc(doc(uref,"data","teams"),{json:JSON.stringify(r.data),updated:Date.now()});alert(`Importado: ${Object.keys(r.data.teams).length} times.${r.warn}`)}}
+ catch(err){alert("Arquivo inválido: "+err.message)}
+ e.target.value=""};
+fillSelects();
 </script>
-</body>
-</html>
+</body></html>
