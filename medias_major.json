@@ -1,0 +1,1129 @@
+{
+ "maps": [
+  "Mirage",
+  "Dust2",
+  "Ancient",
+  "Nuke",
+  "Inferno",
+  "Cache",
+  "Anubis"
+ ],
+ "teams": {
+  "Ninjas in Pyjamas": {
+   "wr": {
+    "Mirage": 0.56,
+    "Dust2": 0.434,
+    "Ancient": 0.59,
+    "Nuke": 0.677,
+    "Inferno": 0.513,
+    "Cache": 0.444,
+    "Anubis": 0.474
+   },
+   "players": {
+    "Adamb (Adam Ångström), SE": 15.8,
+    "Krimbo (Karim  Moussa), DE": 14.0,
+    "stavn (Martin Lund), DK": 15.7,
+    "xKacpersky": 15.6,
+    "sjuush (Rasmus Beck), DK": 15.2
+   },
+   "n": {
+    "maps": {
+     "Mirage": 14,
+     "Dust2": 6,
+     "Ancient": 13,
+     "Nuke": 15,
+     "Inferno": 10,
+     "Cache": 17,
+     "Anubis": 5
+    },
+    "players": {
+     "Adamb (Adam Ångström), SE": 52,
+     "Krimbo (Karim  Moussa), DE": 54,
+     "stavn (Martin Lund), DK": 80,
+     "xKacpersky": 80,
+     "sjuush (Rasmus Beck), DK": 80
+    }
+   }
+  },
+  "PARIVISION": {
+   "wr": {
+    "Mirage": 0.452,
+    "Dust2": 0.39,
+    "Ancient": 0.577,
+    "Nuke": 0.43,
+    "Inferno": 0.345,
+    "Cache": 0.275,
+    "Anubis": 0.429
+   },
+   "players": {
+    "HObbit (Abay Khasenov), KZ": 12.4,
+    "FL1T (Evgeny Lebedev), RU": 13.7,
+    "zweih": 13.4,
+    "xiELO (Vladislav Lysov), RU": 15.0,
+    "Jame (Ali Djami), RU": 14.0
+   },
+   "n": {
+    "maps": {
+     "Mirage": 13,
+     "Dust2": 16,
+     "Ancient": 21,
+     "Nuke": 0,
+     "Inferno": 16,
+     "Cache": 7,
+     "Anubis": 7
+    },
+    "players": {
+     "HObbit (Abay Khasenov), KZ": 62,
+     "FL1T (Evgeny Lebedev), RU": 59,
+     "zweih": 80,
+     "xiELO (Vladislav Lysov), RU": 80,
+     "Jame (Ali Djami), RU": 80
+    }
+   }
+  },
+  "HEROIC": {
+   "wr": {
+    "Mirage": 0.504,
+    "Dust2": 0.589,
+    "Ancient": 0.662,
+    "Nuke": 0.504,
+    "Inferno": 0.642,
+    "Cache": 0.628,
+    "Anubis": 0.593
+   },
+   "players": {
+    "MartinezSa (Antonio  Martinez Sánchez), ES": 14.0,
+    "Brollan (Ludvig Brolin), SE": 14.4,
+    "susp (Tim Ångström), SE": 13.4,
+    "Chr1zN (Christoffer Storgaard), DK": 13.5,
+    "nilo (Linus Bergman), SE": 15.8
+   },
+   "n": {
+    "maps": {
+     "Mirage": 9,
+     "Dust2": 17,
+     "Ancient": 19,
+     "Nuke": 9,
+     "Inferno": 12,
+     "Cache": 14,
+     "Anubis": 0
+    },
+    "players": {
+     "MartinezSa (Antonio  Martinez Sánchez), ES": 77,
+     "Brollan (Ludvig Brolin), SE": 85,
+     "susp (Tim Ångström), SE": 80,
+     "Chr1zN (Christoffer Storgaard), DK": 80,
+     "nilo (Linus Bergman), SE": 80
+    }
+   }
+  },
+  "FaZe Clan": {
+   "wr": {
+    "Mirage": 0.64,
+    "Dust2": 0.357,
+    "Ancient": 0.395,
+    "Nuke": 0.615,
+    "Inferno": 0.512,
+    "Cache": 0.63,
+    "Anubis": 0.434
+   },
+   "players": {
+    "JBOEN (Jason Nielsen), DK": 16.0,
+    "Neityu, FR": 12.8,
+    "Twistzz (Russel Van Dulken), CA": 15.1,
+    "frozen (David Čerňanský), SK": 15.6,
+    "Jcobbb (Jakub Pietruszewski), PL": 15.2
+   },
+   "n": {
+    "maps": {
+     "Mirage": 16,
+     "Dust2": 11,
+     "Ancient": 17,
+     "Nuke": 12,
+     "Inferno": 0,
+     "Cache": 10,
+     "Anubis": 8
+    },
+    "players": {
+     "JBOEN (Jason Nielsen), DK": 70,
+     "Neityu, FR": 74,
+     "Twistzz (Russel Van Dulken), CA": 74,
+     "frozen (David Čerňanský), SK": 74,
+     "Jcobbb (Jakub Pietruszewski), PL": 73
+    }
+   }
+  },
+  "Team Liquid": {
+   "wr": {
+    "Mirage": 0.636,
+    "Dust2": 0.272,
+    "Ancient": 0.408,
+    "Nuke": 0.56,
+    "Inferno": 0.636,
+    "Cache": 0.472,
+    "Anubis": 0.504
+   },
+   "players": {
+    "Jorko": 13.7,
+    "JT (Johnny Theodosiou), ZA": 11.8,
+    "malbsMd (Mario Samayoa), GT": 14.2,
+    "EliGE (Jonathan Jablonowski), US": 16.4,
+    "NAF (Keith Markovic), CA": 14.0
+   },
+   "n": {
+    "maps": {
+     "Mirage": 13,
+     "Dust2": 9,
+     "Ancient": 4,
+     "Nuke": 12,
+     "Inferno": 13,
+     "Cache": 9,
+     "Anubis": 12
+    },
+    "players": {
+     "Jorko": 65,
+     "JT (Johnny Theodosiou), ZA": 65,
+     "malbsMd (Mario Samayoa), GT": 70,
+     "EliGE (Jonathan Jablonowski), US": 72,
+     "NAF (Keith Markovic), CA": 72
+    }
+   }
+  },
+  "Eternal Fire": {
+   "wr": {
+    "Mirage": 0.377,
+    "Dust2": 0.586,
+    "Ancient": 0.687,
+    "Nuke": 0.59,
+    "Inferno": 0.61,
+    "Cache": 0.727,
+    "Anubis": 0.539
+   },
+   "players": {
+    "Soulfly (Caner  Kesici), TR": 15.1,
+    "Kvem (Vladislav Korol), UA": 16.8,
+    "MisteM (Gareth Ries), ZA": 13.4,
+    "regali (Iulian Harjău), RO": 15.9,
+    "jottA (Samet Köklü), TR": 17.1
+   },
+   "n": {
+    "maps": {
+     "Mirage": 14,
+     "Dust2": 12,
+     "Ancient": 21,
+     "Nuke": 0,
+     "Inferno": 8,
+     "Cache": 14,
+     "Anubis": 8
+    },
+    "players": {
+     "Soulfly (Caner  Kesici), TR": 79,
+     "Kvem (Vladislav Korol), UA": 77,
+     "MisteM (Gareth Ries), ZA": 77,
+     "regali (Iulian Harjău), RO": 77,
+     "jottA (Samet Köklü), TR": 77
+    }
+   }
+  },
+  "100 Thieves": {
+   "wr": {
+    "Mirage": 0.711,
+    "Dust2": 0.812,
+    "Ancient": 0.479,
+    "Nuke": 0.619,
+    "Inferno": 0.542,
+    "Cache": 0.606,
+    "Anubis": 0.436
+   },
+   "players": {
+    "Gizmy (Jack  von Spreckelsen), GB": 12.5,
+    "device (Nicolai Reedtz), DK": 14.9,
+    "poiii": 14.3,
+    "sirah (William Kjærsgaard), DK": 13.6,
+    "rain (Håvard Nygaard), NO": 14.5
+   },
+   "n": {
+    "maps": {
+     "Mirage": 9,
+     "Dust2": 17,
+     "Ancient": 10,
+     "Nuke": 8,
+     "Inferno": 10,
+     "Cache": 5,
+     "Anubis": 7
+    },
+    "players": {
+     "Gizmy (Jack  von Spreckelsen), GB": 82,
+     "device (Nicolai Reedtz), DK": 66,
+     "poiii": 66,
+     "sirah (William Kjærsgaard), DK": 66,
+     "rain (Håvard Nygaard), NO": 66
+    }
+   }
+  },
+  "9z": {
+   "wr": {
+    "Mirage": 0.424,
+    "Dust2": 0.476,
+    "Ancient": 0.248,
+    "Nuke": 0.34,
+    "Inferno": 0.527,
+    "Cache": 0.345,
+    "Anubis": 0.413
+   },
+   "players": {
+    "meyern (Ignacio Meyer), AR": 12.4,
+    "luchov (Luciano Herrera), AR": 14.0,
+    "HUASOPEEK (Matías Ibañez), CL": 14.3,
+    "max (Maximiliano Gonzalez), UY": 10.5,
+    "dgt (Franco Manuel Garcia Cabrera), UY": 14.0
+   },
+   "n": {
+    "maps": {
+     "Mirage": 14,
+     "Dust2": 16,
+     "Ancient": 4,
+     "Nuke": 16,
+     "Inferno": 12,
+     "Cache": 7,
+     "Anubis": 0
+    },
+    "players": {
+     "meyern (Ignacio Meyer), AR": 69,
+     "luchov (Luciano Herrera), AR": 69,
+     "HUASOPEEK (Matías Ibañez), CL": 69,
+     "max (Maximiliano Gonzalez), UY": 69,
+     "dgt (Franco Manuel Garcia Cabrera), UY": 69
+    }
+   }
+  },
+  "M80": {
+   "wr": {
+    "Mirage": 0.403,
+    "Dust2": 0.171,
+    "Ancient": 0.305,
+    "Nuke": 0.341,
+    "Inferno": 0.388,
+    "Cache": 0.337,
+    "Anubis": 0.339
+   },
+   "players": {
+    "JBa (Josh Barutt), US": 13.5,
+    "lake (Mason  Sanderson), US": 14.8,
+    "s1n (Elias Stein), DE": 12.4,
+    "slaxz- (Fritz Dietrich), DE": 13.8,
+    "Swisher (Michael Schmid), US": 13.2
+   },
+   "n": {
+    "maps": {
+     "Mirage": 9,
+     "Dust2": 6,
+     "Ancient": 4,
+     "Nuke": 0,
+     "Inferno": 7,
+     "Cache": 6,
+     "Anubis": 3
+    },
+    "players": {
+     "JBa (Josh Barutt), US": 35,
+     "lake (Mason  Sanderson), US": 35,
+     "s1n (Elias Stein), DE": 35,
+     "slaxz- (Fritz Dietrich), DE": 35,
+     "Swisher (Michael Schmid), US": 35
+    }
+   }
+  },
+  "DENDELE": {
+   "wr": {
+    "Mirage": 0.307,
+    "Dust2": 0.434,
+    "Ancient": 0.2,
+    "Nuke": 0.534,
+    "Inferno": 0.467,
+    "Cache": 0.507,
+    "Anubis": 0.56
+   },
+   "players": {
+    "maxxkor (Máximo Cortina), AR": 12.7,
+    "rdnzao (Daniel Monteiro), BR": 13.5,
+    "doc (Danilo Barros), BR": 15.3,
+    "koala (Fahad Khaled Alkadyan), SA": 13.9,
+    "Gafolo (Victor Andrade), BR": 11.2
+   },
+   "n": {
+    "maps": {
+     "Mirage": 9,
+     "Dust2": 0,
+     "Ancient": 7,
+     "Nuke": 12,
+     "Inferno": 6,
+     "Cache": 9,
+     "Anubis": 4
+    },
+    "players": {
+     "maxxkor (Máximo Cortina), AR": 47,
+     "rdnzao (Daniel Monteiro), BR": 47,
+     "doc (Danilo Barros), BR": 47,
+     "koala (Fahad Khaled Alkadyan), SA": 47,
+     "Gafolo (Victor Andrade), BR": 47
+    }
+   }
+  },
+  "Imperial": {
+   "wr": {
+    "Mirage": 0.538,
+    "Dust2": 0.396,
+    "Ancient": 0.462,
+    "Nuke": 0.396,
+    "Inferno": 0.471,
+    "Cache": 0.462,
+    "Anubis": 0.471
+   },
+   "players": {
+    "Decenty (Lucas Bacelar), BR": 13.6,
+    "saadzin, BR": 14.1,
+    "chelo (Marcelo Cespedes), BR": 11.9,
+    "noway (Kaiky Santos), BR": 15.7,
+    "VINI (Vinicius Figueiredo), BR": 9.7
+   },
+   "n": {
+    "maps": {
+     "Mirage": 1,
+     "Dust2": 1,
+     "Ancient": 0,
+     "Nuke": 1,
+     "Inferno": 2,
+     "Cache": 0,
+     "Anubis": 2
+    },
+    "players": {
+     "Decenty (Lucas Bacelar), BR": 7,
+     "saadzin, BR": 20,
+     "chelo (Marcelo Cespedes), BR": 7,
+     "noway (Kaiky Santos), BR": 7,
+     "VINI (Vinicius Figueiredo), BR": 7
+    }
+   }
+  },
+  "Wildcard": {
+   "wr": {
+    "Mirage": 0.411,
+    "Dust2": 0.462,
+    "Ancient": 0.45,
+    "Nuke": 0.3,
+    "Inferno": 0.57,
+    "Cache": 0.462,
+    "Anubis": 0.45
+   },
+   "players": {
+    "cxzi (Danny Strzelczyk), US": 15.5,
+    "nEMANHA (Nemanja Đukić)": 12.9,
+    "HexT (Jadan Postma), CA": 14.6,
+    "mhL (Miłosz Knasiak), PL": 16.2,
+    "reck (Ethan Serrano), US": 11.4
+   },
+   "n": {
+    "maps": {
+     "Mirage": 3,
+     "Dust2": 2,
+     "Ancient": 0,
+     "Nuke": 3,
+     "Inferno": 4,
+     "Cache": 2,
+     "Anubis": 0
+    },
+    "players": {
+     "cxzi (Danny Strzelczyk), US": 14,
+     "nEMANHA (Nemanja Đukić)": 14,
+     "HexT (Jadan Postma), CA": 14,
+     "mhL (Miłosz Knasiak), PL": 14,
+     "reck (Ethan Serrano), US": 14
+    }
+   }
+  },
+  "GOSH": {
+   "wr": {
+    "Mirage": 0.626,
+    "Dust2": 0.7,
+    "Ancient": 0.415,
+    "Nuke": 0.528,
+    "Inferno": 0.533,
+    "Cache": 0.612,
+    "Anubis": 0.566
+   },
+   "players": {
+    "asap (Tyson Paterson), AU": 13.7,
+    "mzinho (Ayush Batbold), MN": 14.1,
+    "senzu (Munkhbold  Azbayar), MN": 17.0,
+    "s1mple (Aleksandr Kostyliev), UA": 16.7,
+    "Magisk (Emil Reif), DK": 13.6
+   },
+   "n": {
+    "maps": {
+     "Mirage": 9,
+     "Dust2": 6,
+     "Ancient": 7,
+     "Nuke": 8,
+     "Inferno": 6,
+     "Cache": 11,
+     "Anubis": 0
+    },
+    "players": {
+     "asap (Tyson Paterson), AU": 35,
+     "mzinho (Ayush Batbold), MN": 58,
+     "senzu (Munkhbold  Azbayar), MN": 47,
+     "s1mple (Aleksandr Kostyliev), UA": 47,
+     "Magisk (Emil Reif), DK": 47
+    }
+   }
+  },
+  "FlyQuest": {
+   "wr": {
+    "Mirage": 0.381,
+    "Dust2": 0.381,
+    "Ancient": 0.458,
+    "Nuke": 0.381,
+    "Inferno": 0.519,
+    "Cache": 0.444,
+    "Anubis": 0.467
+   },
+   "players": {
+    "nettik (Corey Browne), NZ": 13.0,
+    "jks (Justin Savage), AU": 15.5,
+    "INS (Joshua Potter), AU": 14.6,
+    "Vexite (Declan Portelli), AU": 14.8,
+    "story (João Vieira), PT": 14.9
+   },
+   "n": {
+    "maps": {
+     "Mirage": 1,
+     "Dust2": 1,
+     "Ancient": 2,
+     "Nuke": 1,
+     "Inferno": 3,
+     "Cache": 0,
+     "Anubis": 4
+    },
+    "players": {
+     "nettik (Corey Browne), NZ": 12,
+     "jks (Justin Savage), AU": 12,
+     "INS (Joshua Potter), AU": 12,
+     "Vexite (Declan Portelli), AU": 12,
+     "story (João Vieira), PT": 23
+    }
+   }
+  },
+  "Chinggis Warriors": {
+   "wr": {
+    "Mirage": 0.455,
+    "Dust2": 0.455,
+    "Ancient": 0.532,
+    "Nuke": 0.466,
+    "Inferno": 0.455,
+    "Cache": 0.455,
+    "Anubis": 0.341
+   },
+   "players": {
+    "cool4st (Sodbileg Batbaatar), MN": 14.2,
+    "ROUX (Undrakhbayar  Zolbayar), MN": 10.6,
+    "yAmi (Yalalt Oyunbileg), MN": 13.2,
+    "sk0R (Tengis Batjargal), MN": 16.8,
+    "fury5k ( Davaasuren  Ganbaatar), MN": 14.6
+   },
+   "n": {
+    "maps": {
+     "Mirage": 0,
+     "Dust2": 0,
+     "Ancient": 1,
+     "Nuke": 2,
+     "Inferno": 0,
+     "Cache": 0,
+     "Anubis": 2
+    },
+    "players": {
+     "cool4st (Sodbileg Batbaatar), MN": 5,
+     "ROUX (Undrakhbayar  Zolbayar), MN": 5,
+     "yAmi (Yalalt Oyunbileg), MN": 5,
+     "sk0R (Tengis Batjargal), MN": 5,
+     "fury5k ( Davaasuren  Ganbaatar), MN": 5
+    }
+   }
+  },
+  "Lynn Vision": {
+   "wr": {
+    "Mirage": 0.28,
+    "Dust2": 0.153,
+    "Ancient": 0.268,
+    "Nuke": 0.383,
+    "Inferno": 0.283,
+    "Cache": 0.28,
+    "Anubis": 0.21
+   },
+   "players": {
+    "C4LLM3SU3 (Qihao  Su), CN": 12.6,
+    "Starry (Lizhi  Ye), CN": 13.4,
+    "EmiliaQAQ (Junjie Tang), CN": 10.8,
+    "z4kr (Sike Zhang), CN": 11.1,
+    "Westmelon (Niu Zhe), CN": 10.6
+   },
+   "n": {
+    "maps": {
+     "Mirage": 0,
+     "Dust2": 5,
+     "Ancient": 4,
+     "Nuke": 1,
+     "Inferno": 7,
+     "Cache": 0,
+     "Anubis": 2
+    },
+    "players": {
+     "C4LLM3SU3 (Qihao  Su), CN": 19,
+     "Starry (Lizhi  Ye), CN": 19,
+     "EmiliaQAQ (Junjie Tang), CN": 19,
+     "z4kr (Sike Zhang), CN": 19,
+     "Westmelon (Niu Zhe), CN": 19
+    }
+   }
+  },
+  "FUT Esports": {
+   "wr": {
+    "Mirage": 0.584,
+    "Dust2": 0.459,
+    "Ancient": 0.652,
+    "Nuke": 0.356,
+    "Inferno": 0.557,
+    "Cache": 0.634,
+    "Anubis": 0.695
+   },
+   "players": {
+    "SunPayus (Alvaro Garcia), ES": 16.1,
+    "xfl0ud (Yasin Koç), TR": 14.9,
+    "dziugss": 14.5,
+    "Dem0N (Dmytro Myroshnychenko), UA": 16.0,
+    "coolio (András Fercsák), HU": 11.8
+   },
+   "n": {
+    "maps": {
+     "Mirage": 10,
+     "Dust2": 10,
+     "Ancient": 16,
+     "Nuke": 9,
+     "Inferno": 0,
+     "Cache": 4,
+     "Anubis": 6
+    },
+    "players": {
+     "SunPayus (Alvaro Garcia), ES": 33,
+     "xfl0ud (Yasin Koç), TR": 45,
+     "dziugss": 55,
+     "Dem0N (Dmytro Myroshnychenko), UA": 55,
+     "coolio (András Fercsák), HU": 6
+    }
+   }
+  },
+  "Nemiga": {
+   "wr": {
+    "Mirage": 0.635,
+    "Dust2": 0.687,
+    "Ancient": 0.753,
+    "Nuke": 0.672,
+    "Inferno": 0.676,
+    "Cache": 0.647,
+    "Anubis": 0.718
+   },
+   "players": {
+    "Xant3r (Kirill Kononov), RU": 16.0,
+    "robo (Nikita Dushin), RU": 15.5,
+    "syph0": 16.9,
+    "KaiR0N (Aleksandr Anashkin), RU": 17.7,
+    "khaN, KZ": 16.7
+   },
+   "n": {
+    "maps": {
+     "Mirage": 13,
+     "Dust2": 13,
+     "Ancient": 14,
+     "Nuke": 6,
+     "Inferno": 0,
+     "Cache": 8,
+     "Anubis": 8
+    },
+    "players": {
+     "Xant3r (Kirill Kononov), RU": 63,
+     "robo (Nikita Dushin), RU": 65,
+     "syph0": 62,
+     "KaiR0N (Aleksandr Anashkin), RU": 62,
+     "khaN, KZ": 62
+    }
+   }
+  },
+  "G2": {
+   "wr": {
+    "Mirage": 0.603,
+    "Dust2": 0.386,
+    "Ancient": 0.496,
+    "Nuke": 0.262,
+    "Inferno": 0.661,
+    "Cache": 0.353,
+    "Anubis": 0.405
+   },
+   "players": {
+    "r1nkle (Artem Moroz), UA": 13.3,
+    "Nertz (Guy Iluz), IL": 15.5,
+    "MATYS (Matúš Šimko), SK": 14.1,
+    "HeavyGod (Nikita Martynenko), IL": 15.2,
+    "huNter- (Nemanja Kovač), RS": 14.3
+   },
+   "n": {
+    "maps": {
+     "Mirage": 17,
+     "Dust2": 17,
+     "Ancient": 22,
+     "Nuke": 5,
+     "Inferno": 15,
+     "Cache": 5,
+     "Anubis": 11
+    },
+    "players": {
+     "r1nkle (Artem Moroz), UA": 73,
+     "Nertz (Guy Iluz), IL": 91,
+     "MATYS (Matúš Šimko), SK": 91,
+     "HeavyGod (Nikita Martynenko), IL": 91,
+     "huNter- (Nemanja Kovač), RS": 91
+    }
+   }
+  },
+  "NAVI": {
+   "wr": {
+    "Mirage": 0.429,
+    "Dust2": 0.438,
+    "Ancient": 0.632,
+    "Nuke": 0.5,
+    "Inferno": 0.45,
+    "Cache": 0.571,
+    "Anubis": 0.5
+   },
+   "players": {
+    "makazze (Drin  Shaqiri), XK": 14.4,
+    "w0nderful (Igor Zhdanov), UA": 16.8,
+    "iM (Ivan Mihai), RO": 14.4,
+    "B1T (Valeriy Vakhovskiy), UA": 15.1,
+    "Aleksib (Aleksi Virolainen), FI": 10.8
+   },
+   "n": {
+    "maps": {
+     "Mirage": 15,
+     "Dust2": 10,
+     "Ancient": 13,
+     "Nuke": 8,
+     "Inferno": 14,
+     "Cache": 8,
+     "Anubis": 6
+    },
+    "players": {
+     "makazze (Drin  Shaqiri), XK": 73,
+     "w0nderful (Igor Zhdanov), UA": 73,
+     "iM (Ivan Mihai), RO": 73,
+     "B1T (Valeriy Vakhovskiy), UA": 73,
+     "Aleksib (Aleksi Virolainen), FI": 73
+    }
+   }
+  },
+  "Astralis": {
+   "wr": {
+    "Mirage": 0.491,
+    "Dust2": 0.491,
+    "Ancient": 0.578,
+    "Nuke": 0.367,
+    "Inferno": 0.491,
+    "Cache": 0.463,
+    "Anubis": 0.359
+   },
+   "players": {
+    "Ryu (Gytis Glušauskas), LT": 16.2,
+    "phzy (Love Smidebrant), SE": 14.9,
+    "Staehr (Victor Staehr), DK": 15.8,
+    "Jabbi (Jakob Nygaard), DK": 15.3,
+    "siuhy (Kamil Szkaradek), PL": 11.4
+   },
+   "n": {
+    "maps": {
+     "Mirage": 8,
+     "Dust2": 8,
+     "Ancient": 18,
+     "Nuke": 10,
+     "Inferno": 8,
+     "Cache": 11,
+     "Anubis": 2
+    },
+    "players": {
+     "Ryu (Gytis Glušauskas), LT": 65,
+     "phzy (Love Smidebrant), SE": 65,
+     "Staehr (Victor Staehr), DK": 65,
+     "Jabbi (Jakob Nygaard), DK": 55,
+     "siuhy (Kamil Szkaradek), PL": 21
+    }
+   }
+  },
+  "MIBR": {
+   "wr": {
+    "Mirage": 0.507,
+    "Dust2": 0.526,
+    "Ancient": 0.462,
+    "Nuke": 0.421,
+    "Inferno": 0.579,
+    "Cache": 0.61,
+    "Anubis": 0.65
+   },
+   "players": {
+    "tomaszin (Tomas  Corna), AR": 13.8,
+    "nqz (Lucas Soarez), BR": 15.2,
+    "LNZ (Linus Holtäng), SE": 12.1,
+    "venomzera (Carlos Eduardo), BR": 14.1,
+    "insani (Felipe Kuratani), BR": 17.5
+   },
+   "n": {
+    "maps": {
+     "Mirage": 16,
+     "Dust2": 0,
+     "Ancient": 16,
+     "Nuke": 11,
+     "Inferno": 15,
+     "Cache": 9,
+     "Anubis": 5
+    },
+    "players": {
+     "tomaszin (Tomas  Corna), AR": 52,
+     "nqz (Lucas Soarez), BR": 64,
+     "LNZ (Linus Holtäng), SE": 72,
+     "venomzera (Carlos Eduardo), BR": 72,
+     "insani (Felipe Kuratani), BR": 72
+    }
+   }
+  },
+  "The MongolZ": {
+   "wr": {
+    "Mirage": 0.484,
+    "Dust2": 0.657,
+    "Ancient": 0.611,
+    "Nuke": 0.477,
+    "Inferno": 0.485,
+    "Cache": 0.474,
+    "Anubis": 0.527
+   },
+   "players": {
+    "nin9 (Yesuntumur Gantulga), MN": 13.7,
+    "cobrazera": 13.8,
+    "Techno (Munkhbold Sodbayar), MN": 12.7,
+    "bLitz (Byambasuren Garidmagnai), MN": 14.4,
+    "910 (Usukhbayar Banzragch), MN": 16.5
+   },
+   "n": {
+    "maps": {
+     "Mirage": 15,
+     "Dust2": 11,
+     "Ancient": 9,
+     "Nuke": 9,
+     "Inferno": 17,
+     "Cache": 7,
+     "Anubis": 0
+    },
+    "players": {
+     "nin9 (Yesuntumur Gantulga), MN": 38,
+     "cobrazera": 54,
+     "Techno (Munkhbold Sodbayar), MN": 63,
+     "bLitz (Byambasuren Garidmagnai), MN": 68,
+     "910 (Usukhbayar Banzragch), MN": 68
+    }
+   }
+  },
+  "MOUZ": {
+   "wr": {
+    "Mirage": 0.755,
+    "Dust2": 0.692,
+    "Ancient": 0.497,
+    "Nuke": 0.717,
+    "Inferno": 0.696,
+    "Cache": 0.525,
+    "Anubis": 0.655
+   },
+   "players": {
+    "PR (Oldřich Nový), CZ": 14.5,
+    "xelex": 14.2,
+    "Spinx (Lotan  Giladi), IL": 15.2,
+    "xertioN (Dorian Berman), IL": 15.0,
+    "torzsi (Ádám Torzsás), HU": 15.5
+   },
+   "n": {
+    "maps": {
+     "Mirage": 27,
+     "Dust2": 17,
+     "Ancient": 16,
+     "Nuke": 19,
+     "Inferno": 14,
+     "Cache": 11,
+     "Anubis": 0
+    },
+    "players": {
+     "PR (Oldřich Nový), CZ": 105,
+     "xelex": 104,
+     "Spinx (Lotan  Giladi), IL": 104,
+     "xertioN (Dorian Berman), IL": 104,
+     "torzsi (Ádám Torzsás), HU": 104
+    }
+   }
+  },
+  "Vitality": {
+   "wr": {
+    "Mirage": 0.615,
+    "Dust2": 0.612,
+    "Ancient": 0.587,
+    "Nuke": 0.56,
+    "Inferno": 0.712,
+    "Cache": 0.64,
+    "Anubis": 0.396
+   },
+   "players": {
+    "ropz (Robin Kool), EE": 14.9,
+    "mezii (William Merriman), GB": 12.5,
+    "flameZ (Shahar Shushan), IL": 14.4,
+    "ZywOo (Mathieu Herbaut), FR": 16.9,
+    "apEX (Dan Madesclaire), FR": 11.5
+   },
+   "n": {
+    "maps": {
+     "Mirage": 16,
+     "Dust2": 21,
+     "Ancient": 0,
+     "Nuke": 11,
+     "Inferno": 13,
+     "Cache": 12,
+     "Anubis": 13
+    },
+    "players": {
+     "ropz (Robin Kool), EE": 86,
+     "mezii (William Merriman), GB": 75,
+     "flameZ (Shahar Shushan), IL": 86,
+     "ZywOo (Mathieu Herbaut), FR": 86,
+     "apEX (Dan Madesclaire), FR": 70
+    }
+   }
+  },
+  "Aurora": {
+   "wr": {
+    "Mirage": 0.493,
+    "Dust2": 0.588,
+    "Ancient": 0.478,
+    "Nuke": 0.617,
+    "Inferno": 0.467,
+    "Cache": 0.575,
+    "Anubis": 0.639
+   },
+   "players": {
+    "kyxsan (Damjan  Stoilkovski), MK": 11.5,
+    "Jimpphat (Jimi  Salo), FI": 14.8,
+    "XANTARES (Ismailcan Dörtkardeş), TR": 14.0,
+    "woxic (Özgür Eker), TR": 14.7,
+    "Wicadia ( Ali Haydar Yalçın), TR": 15.3
+   },
+   "n": {
+    "maps": {
+     "Mirage": 15,
+     "Dust2": 15,
+     "Ancient": 1,
+     "Nuke": 14,
+     "Inferno": 14,
+     "Cache": 12,
+     "Anubis": 18
+    },
+    "players": {
+     "kyxsan (Damjan  Stoilkovski), MK": 77,
+     "Jimpphat (Jimi  Salo), FI": 77,
+     "XANTARES (Ismailcan Dörtkardeş), TR": 89,
+     "woxic (Özgür Eker), TR": 89,
+     "Wicadia ( Ali Haydar Yalçın), TR": 89
+    }
+   }
+  },
+  "Spirit": {
+   "wr": {
+    "Mirage": 0.631,
+    "Dust2": 0.631,
+    "Ancient": 0.725,
+    "Nuke": 0.719,
+    "Inferno": 0.657,
+    "Cache": 0.585,
+    "Anubis": 0.712
+   },
+   "players": {
+    "zont1x (Myroslav Plakhotia), UA": 12.6,
+    "magixx (Boris Vorobiev), RU": 12.3,
+    "tN1R (Andrey Tatarinovich), BY": 14.0,
+    "sh1ro (Dmitry Sokolov), RU": 15.7,
+    "Donk (Danil Kryshkovets), RU": 19.3
+   },
+   "n": {
+    "maps": {
+     "Mirage": 24,
+     "Dust2": 24,
+     "Ancient": 16,
+     "Nuke": 12,
+     "Inferno": 0,
+     "Cache": 11,
+     "Anubis": 15
+    },
+    "players": {
+     "zont1x (Myroslav Plakhotia), UA": 102,
+     "magixx (Boris Vorobiev), RU": 102,
+     "tN1R (Andrey Tatarinovich), BY": 102,
+     "sh1ro (Dmitry Sokolov), RU": 102,
+     "Donk (Danil Kryshkovets), RU": 102
+    }
+   }
+  },
+  "BB Team": {
+   "wr": {
+    "Mirage": 0.562,
+    "Dust2": 0.49,
+    "Ancient": 0.565,
+    "Nuke": 0.633,
+    "Inferno": 0.549,
+    "Cache": 0.525,
+    "Anubis": 0.516
+   },
+   "players": {
+    "zorte (Alexandr Zagodyrenko), RU": 15.1,
+    "d1Ledez (Daniil Kustov), RU": 14.0,
+    "Boombl4 (Kirill  Mikhailov), RU": 12.8,
+    "Magnojez (Kirill Rodnov), RU": 16.1,
+    "s1ren (Pavel  Ogloblin), RU": 14.8
+   },
+   "n": {
+    "maps": {
+     "Mirage": 23,
+     "Dust2": 15,
+     "Ancient": 14,
+     "Nuke": 15,
+     "Inferno": 0,
+     "Cache": 6,
+     "Anubis": 12
+    },
+    "players": {
+     "zorte (Alexandr Zagodyrenko), RU": 85,
+     "d1Ledez (Daniil Kustov), RU": 85,
+     "Boombl4 (Kirill  Mikhailov), RU": 85,
+     "Magnojez (Kirill Rodnov), RU": 85,
+     "s1ren (Pavel  Ogloblin), RU": 65
+    }
+   }
+  },
+  "Falcons": {
+   "wr": {
+    "Mirage": 0.567,
+    "Dust2": 0.616,
+    "Ancient": 0.499,
+    "Nuke": 0.589,
+    "Inferno": 0.592,
+    "Cache": 0.58,
+    "Anubis": 0.624
+   },
+   "players": {
+    "karrigan (Finn Andersen), DK": 10.5,
+    "Kyousuke": 16.2,
+    "m0NESY (Ilya Osipov), RU": 17.9,
+    "TeSeS (Rene Madsen), DK": 13.4,
+    "NiKo (Nikola Kovač), BA": 15.3
+   },
+   "n": {
+    "maps": {
+     "Mirage": 16,
+     "Dust2": 24,
+     "Ancient": 13,
+     "Nuke": 5,
+     "Inferno": 10,
+     "Cache": 0,
+     "Anubis": 14
+    },
+    "players": {
+     "karrigan (Finn Andersen), DK": 82,
+     "Kyousuke": 82,
+     "m0NESY (Ilya Osipov), RU": 82,
+     "TeSeS (Rene Madsen), DK": 82,
+     "NiKo (Nikola Kovač), BA": 82
+    }
+   }
+  },
+  "FURIA": {
+   "wr": {
+    "Mirage": 0.61,
+    "Dust2": 0.673,
+    "Ancient": 0.482,
+    "Nuke": 0.66,
+    "Inferno": 0.626,
+    "Cache": 0.588,
+    "Anubis": 0.352
+   },
+   "players": {
+    "YEKINDAR (Mareks Gaļinskis), LV": 14.7,
+    "molodoy": 16.1,
+    "yuurih (Yuri Santos), BR": 12.6,
+    "FalleN (Gabriel Toledo), BR": 11.6,
+    "KSCERATO (Kaike Cerato), BR": 15.8
+   },
+   "n": {
+    "maps": {
+     "Mirage": 26,
+     "Dust2": 23,
+     "Ancient": 20,
+     "Nuke": 16,
+     "Inferno": 14,
+     "Cache": 17,
+     "Anubis": 4
+    },
+    "players": {
+     "YEKINDAR (Mareks Gaļinskis), LV": 120,
+     "molodoy": 120,
+     "yuurih (Yuri Santos), BR": 120,
+     "FalleN (Gabriel Toledo), BR": 120,
+     "KSCERATO (Kaike Cerato), BR": 120
+    }
+   }
+  },
+  "Legacy": {
+   "wr": {
+    "Mirage": 0.564,
+    "Dust2": 0.504,
+    "Ancient": 0.414,
+    "Nuke": 0.546,
+    "Inferno": 0.532,
+    "Cache": 0.592,
+    "Anubis": 0.517
+   },
+   "players": {
+    "try (Santino Rigal), AR": 16.6,
+    "arT (Andrei Piovezan), BR": 12.1,
+    "Ksloks (Italo Meinberg), BR": 11.7,
+    "latto (Bruno Rebelatto), BR": 16.3,
+    "dumau (Eduardo Wolkmer), BR": 15.5
+   },
+   "n": {
+    "maps": {
+     "Mirage": 19,
+     "Dust2": 22,
+     "Ancient": 16,
+     "Nuke": 7,
+     "Inferno": 13,
+     "Cache": 6,
+     "Anubis": 0
+    },
+    "players": {
+     "try (Santino Rigal), AR": 70,
+     "arT (Andrei Piovezan), BR": 74,
+     "Ksloks (Italo Meinberg), BR": 10,
+     "latto (Bruno Rebelatto), BR": 83,
+     "dumau (Eduardo Wolkmer), BR": 83
+    }
+   }
+  }
+ }
+}
